@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+:root {
+    --purple: #7f60ff;
+    --purple-light: #aa8fff;
+    --color-text: #ffffff;
+    --color-text-secondary: #ccccff;
+    --light: #bba8ea;
+    --secondary: #ebebeb;
+    --fialetovii: #0b0b10;
+    --dark: #3b3b3b;
+    --primary: #0079FF;
+    --success: #00DFA2;
+    --warning: #ffc009;
+    --danger: #FF0060;
+}
+body {
+    background-color: var(--fialetovii);
+    background: radial-gradient(circle at 30% 30%, rgba(127, 96, 255, 0.15), transparent 60%),
+            radial-gradient(circle at 70% 70%, rgba(177, 138, 255, 0.1), transparent 70%),
+            #0b0b10;
+
+}
+button {
+    border: none;
+    font-size: 15px;
+    text-decoration: none;
+    
+}
+.header {
+    background-color: #1a0933; /* Тёмно-фиолетовый как у кнопки */
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid rgba(156, 110, 255, 0.3); /* Светлая фиолетовая граница */
+    box-shadow: 0 2px 100px rgba(123, 44, 191, 0.4); /* Лёгкое свечение */
+}
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.header-nav__link {
+    cursor: pointer;
+    color: var(--dark);
+    transition: 0.3s ease-in-out;
+}
+.header-nav__link:hover {
+    color: var(--primary);
+}
+.logo {
+    background-color: rgba(123, 44, 191, 0.2); /* Полупрозрачный фиолетовый */
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(199, 125, 255, 0.3);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
+}
+
+.logo:hover {
+    background-color: rgba(123, 44, 191, 0.3);
+    box-shadow: 0 0 15px rgba(156, 110, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.logo img {
+    width: 32px;
+    filter: drop-shadow(0 0 4px rgba(199, 125, 255, 0.7));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.logo-text {
+    color: #f0e6ff;
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 5px rgba(199, 125, 255, 0.5);
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-text {
+    text-shadow: 0 0 8px rgba(255, 215, 255, 0.8);
+}
+
+.cart-button {
+    position: relative;
+    background: #1a0933;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(123, 44, 191, 0.4);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); /* Плавная анимация */
+    z-index: 1;
+    border: 1px solid rgba(156, 110, 255, 0.15);
+    transform: scale(1); /* Исходный размер */
+}
+
+/* Эффект увеличения при наведении */
+.cart-button:hover {
+    transform: scale(1.08); /* Увеличение на 8% */
+    box-shadow: 0 0 20px rgba(156, 110, 255, 0.7);
+}
+
+/* Основная полоса зачарования */
+.cart-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(157, 78, 221, 0.6),
+        rgba(199, 125, 255, 0.9),
+        rgba(157, 78, 221, 0.6),
+        transparent
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+
+.cart-button:hover::before {
+    animation: minecraft-enchant-wave 2.5s ease-out forwards;
+}
+
+@keyframes minecraft-enchant-wave {
+    0% {
+        left: -100%;
+        opacity: 0.8;
+    }
+    15% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Мерцающий фон */
+.cart-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(123, 44, 191, 0.1),
+        rgba(199, 125, 255, 0.2),
+        rgba(123, 44, 191, 0.1)
+    );
+    opacity: 0;
+    z-index: -2;
+    transition: opacity 0.6s ease;
+}
+
+.cart-button:hover::after {
+    opacity: 0.3;
+    animation: enchant-flicker 4s linear infinite;
+}
+
+.block {
+    padding: 60px 0;
+}
+.stories-list {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+    gap: 20px;
+}
+.stories-list img {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 30px;
+}
+.title {
+    color: var(--dark);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: space-between;
+    gap: 20px;
+}
+.product-item {
+    transform: scale(1);
+    background-color: var(--light);
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.3s ease-in-out;
+}
+.product-item:hover {
+    transform: scale(1.06);
+}
+.product-item__img {
+    width: 100%;
+}
+.product-item__title {
+    font-size: 17px;
+    color: var(--dark);
+}
+.product-item__description {
+    color: var(--dark);
+    font-size: 12px;
+}
+.product-item__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-button {
+  background: linear-gradient(135deg, rgba(127, 96, 255, 0.25), rgba(177, 138, 255, 0.25));
+  color: var(--color-text);
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(127, 96, 255, 0.2);
+  backdrop-filter: blur(3px);
+  opacity: 0.7;
+}
+
+.add-button:hover {
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(177, 138, 255, 0.3), 0 0 30px rgba(127, 96, 255, 0.2);
+  transform: scale(1.05);
+}
+.back-btn {
+    cursor: pointer;
+    background-color: var(--danger);
+    opacity: 0.5;
+    border-radius: 30px;
+    color: var(--light);
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    top: -15px;
+}
+.back-btn:hover {
+    opacity: 1;
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+.cart-table th, .cart-table tr, .cart-table td {
+    border: 1px solid var(--dark);
+}
+.cart-table th {
+    padding: 10px;
+}
+.cart-table td {
+    padding: 10px;
+    text-align: center;
+}
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+.circle {
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--light);
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary);
+}
+.delete-btn {
+    background-color: var(--danger);
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 10px 12px;
+    color: var(--light);
+    border-radius: 30px;
+}
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.cart-img {
+    width: 128px;
+}
+.total-price {
+    font-size: 28px;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+.cart-action {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.cart-action__btn {
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: var(--success);
+    border-radius: 30px;
+    color: var(--light);
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+}
+.cart-action__btn:hover {
+    opacity: 1;
+}
+
+.form {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.form-control label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark);
+}
+.form-control input, .form-control textarea, .form-control select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--secondary);
+}
+.form-control input:focus, .form-control textarea:focus, .form-control select:focus {
+    outline: none;
+    border: 1px solid var(--primary);
+}
+.send-btn {
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: var(--primary);
+    color: var(--light);
+    border-radius: 30px;
+}
+.alert-danger {
+    background-color: var(--danger);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    color: var(--light);
+}
