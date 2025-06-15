@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="./images/logo.svg" alt="Logo" />
+                <span class="logo-text">Pizzafy.</span>
+            </div>
+            <button class="cart-button">Корзина : 0</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="block">
+            <div class="container">
+                <h1 class="title">Добро пожаловать в Pizzafy!</h1>
+                <div class="stories-list">
+                    <img src="./images/home/1.webp" alt="1" />
+                    <img src="./images/home/2.webp" alt="1" />
+                    <img src="./images/home/3.webp" alt="1" />
+                    <img src="./images/home/4.webp" alt="1" />
+                    <img src="./images/home/5.webp" alt="1" />
+                </div>
+            </div>
+        </section>
+        <section class="block">
+            <div class="container">
+                <h1 class="title">Меню</h1>
+                <div class="products-list">
+                    <div class="product-item">
+                        <img src="./images/placeholder.svg" alt="" class="product-item__img" />
+                        <h3 class="product-item__title">Name</h3>
+                        <p class="product-item__description">Description</p>
+                        <p class="product-item__description">category</p>
+                        <div class="product-item__action">
+                            <strong class="product-item__title">price &#8376;</strong>
+                            <button class="add-button">
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="block">
+            <div class="container">
+                <button class="back-btn">Назад</button>
+                <h1 class="title">Моя корзина</h1>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Наименование продукта</th>
+                            <th>Фото</th>
+                            <th>Цена</th>
+                            <th>Количество</th>
+                            <th>Всего</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Маргарита</td>
+                            <td>
+                                <img src="https://media.dodostatic.net/image/r:584x584/11EE7D5F7DFCC07695BBB44734525217.avif"
+                                    class="cart-img" alt="" />
+                            </td>
+                            <td>1234 &#8376;</td>
+                            <td>
+                                <div class="counter">
+                                    <button class="circle">-</button>
+                                    <span>1</span>
+                                    <button class="circle">+</button>
+                                </div>
+                            </td>
+                            <td>1234 &#8376;</td>
+                            <td><button class="delete-btn">Удалить</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="total-price">Итого: 1234 &#8376;</h3>
+                <div class="cart-action">
+                    <button class="cart-action__btn">Оформление заказа</button>
+                    <button class="cart-action__btn">Продолжить покупку</button>
+                </div>
+            </div>
+        </section>
+        <section class="block">
+            <div class="container">
+                <button class="back-btn">Назад</button>
+                <h1 class="title">Оформление заказа</h1>
+                <form class="form">
+                    <div class="form-control">
+                        <label htmlFor="name" class="label">Ваше имя</label>
+                        <input type="text" name="name" placeholder="Введите имя" required />
+                    </div>
+                    <div class="form-control">
+                        <label htmlFor="phone" class="label">Номер телефона</label>
+                        <input type="text" name="phone" placeholder="Введите номер телефона: +7 XXX XXX XX XX"
+                            required />
+                    </div>
+                    <div class="form-control">
+                        <label htmlFor="phone" class="label">Напишите адрес</label>
+                        <textarea placeholder="Введите адрес, дом, квартиру, домофон" required></textarea>
+                    </div>
+                    <div class="form-control">
+                        <label htmlFor="phone" class="label">Укажите город</label>
+                        <select name="" id="">
+                            <option value="1">Алматы</option>
+                            <option value="1">Астана</option>
+                        </select>
+                    </div>
+                    <button class="send-btn">Оформить заказ</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
